@@ -19,11 +19,22 @@
 
     <string name="clock_reset">Reset Clock</string>
 
+    <string name="simple_counter_subtract_string">Sub</string>
+
+    <string name="simple_counter_add_string">Add</string>
+
+    <string name="simple_counter_title">Counter</string>
+
+    <string name="simple_counter_output">0</string>
+
     <string-array name="time_units_selection">
         <item>Seconds</item>
         <item>Minutes</item>
         <item>Hours</item>
         <item>Days</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
