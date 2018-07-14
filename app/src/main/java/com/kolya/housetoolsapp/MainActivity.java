@@ -9,5 +9,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TestFragment testFragment = new TestFragment();
+
+        /*getSupportFragmentManager().beginTransaction()
+                .add(R.id.test_fragment, testFragment, "testFragment")
+                .addToBackStack("testFragment")
+                .commit();*/
     }
 }
