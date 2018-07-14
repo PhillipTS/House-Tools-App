@@ -4,4 +4,9 @@
     <string name="hello_test_fragment">Test Fragment</string>
 
     <string name="default_time">Time</string>
+
+    <string name="timer_start_button">Start</string>
+
+    <string name="timer_value_default">Done</string>
+
 </resources>

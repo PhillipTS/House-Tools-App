@@ -20,7 +20,7 @@ import java.util.Date;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CurrentTime extends Fragment {
+public class CurrentTime extends Tool {
 
     public CurrentTime() {
         // Required empty public constructor
