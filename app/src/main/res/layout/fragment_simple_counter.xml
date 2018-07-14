@@ -6,22 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".Tools.SimpleCounter">
 
-    <!-- TODO: Update blank fragment layout -->
+
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/simpleTimerOutput"
+            android:id="@+id/simpleCounterOutput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/simple_counter_output"
             style="@style/OutputValues"
-            app:layout_constraintBottom_toBottomOf="@+id/buttonTimerDecrement"
-            app:layout_constraintEnd_toStartOf="@+id/buttonTimerIncrement"
-            app:layout_constraintStart_toEndOf="@+id/buttonTimerDecrement"
-            app:layout_constraintTop_toTopOf="@+id/buttonTimerDecrement" />
+            app:layout_constraintBottom_toBottomOf="@+id/buttonCounterDecrement"
+            app:layout_constraintEnd_toStartOf="@+id/buttonCounterIncrement"
+            app:layout_constraintStart_toEndOf="@+id/buttonCounterDecrement"
+            app:layout_constraintTop_toTopOf="@+id/buttonCounterDecrement" />
 
         <TextView
             android:id="@+id/simpleCounterTitle"
@@ -30,12 +30,12 @@
             android:layout_marginBottom="16dp"
             android:text="@string/simple_counter_title"
             style="@style/toolTitle"
-            app:layout_constraintBottom_toTopOf="@+id/buttonTimerDecrement"
+            app:layout_constraintBottom_toTopOf="@+id/buttonCounterDecrement"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/buttonTimerDecrement"
+            android:id="@+id/buttonCounterDecrement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/simple_counter_subtract_string"
@@ -45,14 +45,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/buttonTimerIncrement"
+            android:id="@+id/buttonCounterIncrement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/simple_counter_add_string"
-            app:layout_constraintBottom_toBottomOf="@+id/buttonTimerDecrement"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonCounterDecrement"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="@+id/buttonTimerDecrement"
+            app:layout_constraintTop_toTopOf="@+id/buttonCounterDecrement"
             app:layout_constraintVertical_bias="0.0" />
 
         <android.support.constraint.Guideline
