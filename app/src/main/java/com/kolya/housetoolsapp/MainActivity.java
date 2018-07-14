@@ -1,8 +1,10 @@
 package com.kolya.housetoolsapp;
 
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.kolya.housetoolsapp.Tools.CurrentTime;
+import com.kolya.housetoolsapp.Tools.TestFragment;
 
 public class MainActivity extends AppCompatActivity {
 

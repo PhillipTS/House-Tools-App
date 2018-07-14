@@ -1,4 +1,4 @@
-package com.kolya.housetoolsapp;
+package com.kolya.housetoolsapp.Tools;
 
 import android.content.Context;
 import android.net.Uri;
@@ -7,20 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.sql.Time;
-import java.util.Date;
+import com.kolya.housetoolsapp.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
+ * create an instance of this fragment.
  */
-public class CurrentTime extends Fragment {
+public class TestFragment extends Fragment {
 
-    public CurrentTime() {
+    public TestFragment() {
         // Required empty public constructor
     }
 
@@ -32,15 +29,7 @@ public class CurrentTime extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_current_time, container, false);
-
-        Date date = new Date();
-
-        TextView textView = (TextView) view.findViewById(R.id.timeView);
-
-        if (textView != null)
-            textView.setText(date.toString());
-
-        return view;
+        return inflater.inflate(R.layout.fragment_test, container, false);
     }
+
 }
