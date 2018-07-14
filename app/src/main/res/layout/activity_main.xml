@@ -8,6 +8,7 @@
 
     <fragment
         android:id="@+id/tool1"
+        android:name="com.kolya.housetoolsapp.Tool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/tool2"
@@ -17,6 +18,7 @@
 
     <fragment
         android:id="@+id/tool2"
+        android:name="com.kolya.housetoolsapp.Tool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
