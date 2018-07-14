@@ -1,5 +1,6 @@
 package com.kolya.housetoolsapp;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -11,10 +12,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TestFragment testFragment = new TestFragment();
+        CurrentTime currentTime = new CurrentTime();
 
-        /*getSupportFragmentManager().beginTransaction()
-                .add(R.id.test_fragment, testFragment, "testFragment")
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.tool1, testFragment, "testFragment")
                 .addToBackStack("testFragment")
-                .commit();*/
+                .commit();
+
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.tool2, currentTime, "currentTime")
+                .addToBackStack("currentTime")
+                .commit();
     }
 }
