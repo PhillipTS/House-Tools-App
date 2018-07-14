@@ -17,7 +17,7 @@ import org.w3c.dom.Text;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Timer extends Fragment {
+public class Timer extends Tool {
 
     public Timer() {
         // Required empty public constructor

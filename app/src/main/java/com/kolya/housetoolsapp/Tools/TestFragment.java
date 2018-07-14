@@ -15,7 +15,7 @@ import com.kolya.housetoolsapp.R;
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
  */
-public class TestFragment extends Fragment {
+public class TestFragment extends Tool {
 
     public TestFragment() {
         // Required empty public constructor
