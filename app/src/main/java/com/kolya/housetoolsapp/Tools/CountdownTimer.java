@@ -21,13 +21,13 @@ import org.w3c.dom.Text;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Timer extends Tool implements AdapterView.OnItemSelectedListener {
+public class CountdownTimer extends Tool implements AdapterView.OnItemSelectedListener {
 
     private int timeUnitMultiplier = 1;
 
     private CountDownTimer countDownTimer = null;
 
-    public Timer() {
+    public CountdownTimer() {
         // Required empty public constructor
     }
 
@@ -55,8 +55,16 @@ public class Timer extends Tool implements AdapterView.OnItemSelectedListener {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int time = Integer.parseInt("" + timerInput.getText());
+                int time;
+                // Check for valid input
+                try {
+                    time = Integer.parseInt("" + timerInput.getText());
+                }
+                catch (NumberFormatException invalidTimeInput) {
+                    return;
+                }
 
+                // Stop counter if it's already going
                 if (countDownTimer != null)
                     countDownTimer.cancel();
 

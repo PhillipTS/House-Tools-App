@@ -1,7 +1,5 @@
 package com.kolya.housetoolsapp.Tools;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,10 +9,9 @@ import android.widget.TextView;
 
 import com.kolya.housetoolsapp.R;
 
-import org.w3c.dom.Text;
-
-import java.sql.Time;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 /**
@@ -34,14 +31,11 @@ public class CurrentTime extends Tool {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_current_time, container, false);
+        final View view = inflater.inflate(R.layout.fragment_current_time, container, false);
 
         Date date = new Date();
 
-        TextView textView = (TextView) view.findViewById(R.id.timeView);
-
-        if (textView != null)
-            textView.setText(date.toString());
+        ((TextView) view.findViewById(R.id.timeView)).setText(date.toString());
 
         return view;
     }

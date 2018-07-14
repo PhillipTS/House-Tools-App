@@ -3,13 +3,21 @@
 
     <string name="hello_test_fragment">Test Fragment</string>
 
+    <string name="timer_title">Timer</string>
+
     <string name="default_time">Time</string>
 
     <string name="timer_start_button">Start</string>
 
     <string name="timer_value_default">Done</string>
 
-    <string name="timer_title">Timer</string>
+    <string name="clock_title">Stopwatch</string>
+
+    <string name="clock_toggle_start">Start Clock</string>
+
+    <string name="clock_toggle_stop">Stop Clock</string>
+
+    <string name="clock_reset">Reset Clock</string>
 
     <string-array name="time_units_selection">
         <item>Seconds</item>
