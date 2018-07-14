@@ -9,4 +9,13 @@
 
     <string name="timer_value_default">Done</string>
 
+    <string name="timer_title">Timer</string>
+
+    <string-array name="time_units_selection">
+        <item>Seconds</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+        <item>Days</item>
+    </string-array>
+
 </resources>

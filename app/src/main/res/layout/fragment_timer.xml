@@ -28,10 +28,6 @@
             android:id="@+id/countdownValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:text="@string/timer_value_default"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -51,5 +47,25 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/timeUnitSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/timerTitle"
+            app:layout_constraintEnd_toEndOf="@+id/start-stopCountdown" />
+
+        <TextView
+            android:id="@+id/timerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            style="@style/toolTitle"
+            android:text="@string/timer_title"
+            app:layout_constraintBottom_toTopOf="@+id/timeInput"
+            app:layout_constraintStart_toStartOf="@+id/timeInput" />
+
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>
