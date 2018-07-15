@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.kolya.housetoolsapp.Tools.CurrentTime;
 import com.kolya.housetoolsapp.Tools.SimpleCounter;
+import com.kolya.housetoolsapp.Tools.SimpleTally;
 import com.kolya.housetoolsapp.Tools.StopWatch;
 import com.kolya.housetoolsapp.Tools.TestFragment;
 import com.kolya.housetoolsapp.Tools.CountdownTimer;
@@ -22,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
         StopWatch stopWatch = new StopWatch();
         TestFragment testFragment1 = new TestFragment();
         SimpleCounter simpleCounter = new SimpleCounter();
+        SimpleTally simpleTally = new SimpleTally();
 
-        setTool(currentTime, R.id.tool1, "currentTime");
+        setTool(simpleTally, R.id.tool1, "simpleTally");
 
         setTool(countdownTimer, R.id.tool2, "countdownTime");
 
