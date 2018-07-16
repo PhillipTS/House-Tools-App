@@ -7,17 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.kolya.housetoolsapp.Clock;
 import com.kolya.housetoolsapp.R;
-
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class CurrentTime extends Tool {
+
+    TextView display;
+
+    Clock clock;
 
     public CurrentTime() {
         // Required empty public constructor
@@ -31,11 +32,24 @@ public class CurrentTime extends Tool {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_current_time, container, false);
+        View view = inflater.inflate(R.layout.fragment_current_time, container, false);
 
-        Date date = new Date();
+        display = (TextView) view.findViewById(R.id.timeView);
 
-        ((TextView) view.findViewById(R.id.timeView)).setText(date.toString());
+        clock = new Clock() {
+            @Override
+            public void onTick() {
+                super.startClock();
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        display.setText(clock.getTime());
+                    }
+                });
+            }
+        };
+
+        clock.startClock();
 
         return view;
     }

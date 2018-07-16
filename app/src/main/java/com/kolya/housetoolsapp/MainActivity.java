@@ -20,16 +20,17 @@ public class MainActivity extends AppCompatActivity {
 
         CurrentTime currentTime = new CurrentTime();
         CountdownTimer countdownTimer = new CountdownTimer();
-        StopWatch stopWatch = new StopWatch();
-        TestFragment testFragment1 = new TestFragment();
+        //StopWatch stopWatch = new StopWatch();
         SimpleCounter simpleCounter = new SimpleCounter();
         SimpleTally simpleTally = new SimpleTally();
+
+        //TestFragment testFragment1 = new TestFragment();
 
         setTool(simpleTally, R.id.tool1, "simpleTally");
 
         setTool(countdownTimer, R.id.tool2, "countdownTime");
 
-        setTool(stopWatch, R.id.tool3, "stopWatch");
+        setTool(currentTime, R.id.tool3, "currentTime");
 
         setTool(simpleCounter, R.id.tool4, "simpleCounter");
     }

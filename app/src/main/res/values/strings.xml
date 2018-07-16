@@ -3,6 +3,8 @@
 
     <string name="hello_test_fragment">Test Fragment</string>
 
+    <string name="current_time_title">Current Time</string>
+
     <string name="timer_title">Timer</string>
 
     <string name="default_time">Time</string>
