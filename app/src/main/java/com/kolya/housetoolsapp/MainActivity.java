@@ -15,23 +15,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Call super
         super.onCreate(savedInstanceState);
+        // Set Layout
         setContentView(R.layout.activity_main);
 
+        // Create Tools
         CurrentTime currentTime = new CurrentTime();
         CountdownTimer countdownTimer = new CountdownTimer();
         //StopWatch stopWatch = new StopWatch();
         SimpleCounter simpleCounter = new SimpleCounter();
         SimpleTally simpleTally = new SimpleTally();
-
         //TestFragment testFragment1 = new TestFragment();
 
+        // Set Tools
         setTool(simpleTally, R.id.tool1, "simpleTally");
-
         setTool(countdownTimer, R.id.tool2, "countdownTime");
-
         setTool(currentTime, R.id.tool3, "currentTime");
-
         setTool(simpleCounter, R.id.tool4, "simpleCounter");
     }
 
