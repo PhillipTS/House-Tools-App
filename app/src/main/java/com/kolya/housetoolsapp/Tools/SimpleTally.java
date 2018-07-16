@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.kolya.housetoolsapp.R;
 
+import java.util.Locale;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -20,13 +22,12 @@ public class SimpleTally extends Tool {
     float tallyValue = 0;
 
     public SimpleTally() {
-        // Required empty public constructor
+        title = "Simple Tally";
+        description = "A simple tally that can count up";
     }
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_simple_tally, container, false);
 
@@ -40,8 +41,8 @@ public class SimpleTally extends Tool {
             @Override
             public void onClick(View view) {
                 float newInput = Float.parseFloat("" + tallyInput.getText());
-                tallyValue = tallyValue+newInput;
-                tallyOutput.setText("$" + tallyValue);
+                tallyValue += newInput;
+                tallyOutput.setText(String.format(Locale.ENGLISH, "$%f", tallyValue));
             }
         });
 

@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.kolya.housetoolsapp.R;
 
+import java.util.Locale;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -19,13 +21,13 @@ public class SimpleCounter extends Tool {
     private int counterValue = 0;
 
     public SimpleCounter() {
-        // Required empty public constructor
+        title = "Simple Counter";
+        description = "A simple counter that counts up or down";
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_simple_counter, container, false);
 
@@ -39,7 +41,7 @@ public class SimpleCounter extends Tool {
             @Override
             public void onClick(View view) {
                 counterValue--;
-                timerOutput.setText("" + counterValue);
+                timerOutput.setText(String.format(Locale.ENGLISH, "%d", counterValue));
             }
         });
 
@@ -47,7 +49,7 @@ public class SimpleCounter extends Tool {
             @Override
             public void onClick(View view) {
                 counterValue++;
-                timerOutput.setText("" + counterValue);
+                timerOutput.setText(String.format(Locale.ENGLISH, "%d", counterValue));
             }
         });
 

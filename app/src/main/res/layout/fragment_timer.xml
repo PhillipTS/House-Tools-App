@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="@string/timer_title"
             app:layout_constraintBottom_toTopOf="@+id/timeInput"
             app:layout_constraintStart_toStartOf="@+id/timeInput"

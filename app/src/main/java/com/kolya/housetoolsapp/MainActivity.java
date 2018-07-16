@@ -1,5 +1,7 @@
 package com.kolya.housetoolsapp;
 
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -65,15 +67,14 @@ public class MainActivity extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.change_tools:
-                Toast.makeText(this, toolDataManager.getTools().toString(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, EditToolsActivity.class);
+                startActivity(intent);
                 return true;
-            case R.id.add_tool:
+            case R.id.add_current_time:
                 toolDataManager.addTool(Tool.CURRENT_TIME_TOOL);
-                Toast.makeText(this, "Added", Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.remove_tool:
-                toolDataManager.removeTool(Tool.TEST_TOOL);
-                Toast.makeText(this, "Removed", Toast.LENGTH_SHORT).show();
+            case R.id.add_countdown_timer:
+                toolDataManager.addTool(Tool.COUNTDOWN_TIMER_TOOL);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

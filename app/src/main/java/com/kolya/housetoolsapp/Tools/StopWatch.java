@@ -1,6 +1,7 @@
 package com.kolya.housetoolsapp.Tools;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import com.kolya.housetoolsapp.Clock;
 import com.kolya.housetoolsapp.R;
 
+import java.util.Locale;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -21,7 +24,10 @@ public class StopWatch extends Tool {
 
     private Button clockToggleButton;
 
-    public StopWatch() {}
+    public StopWatch() {
+        title = "StopWatch";
+        description = "A stopwatch that can count up, stop/start, and reset";
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,12 +40,14 @@ public class StopWatch extends Tool {
             @Override
             protected void onTick() {
                 super.onTick();
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        stopwatch.setText(Integer.toString(clock.getCount()));
-                    }
-                });
+                Activity activity = getActivity();
+                if (activity != null)
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            stopwatch.setText(String.format(Locale.ENGLISH, "%d", clock.getCount()));
+                        }
+                    });
             }
         };
 

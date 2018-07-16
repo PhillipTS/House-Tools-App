@@ -1,6 +1,7 @@
 package com.kolya.housetoolsapp.Tools;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,8 @@ import com.kolya.housetoolsapp.R;
 
 import org.w3c.dom.Text;
 
+import java.util.Locale;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -28,9 +31,9 @@ public class CountdownTimer extends Tool implements AdapterView.OnItemSelectedLi
     private CountDownTimer countDownTimer = null;
 
     public CountdownTimer() {
-        // Required empty public constructor
+        title = "Countdown Timer";
+        description = "A timer that counts down to 0 from a set value";
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -45,10 +48,13 @@ public class CountdownTimer extends Tool implements AdapterView.OnItemSelectedLi
 
         //spinner
         final Spinner timeUnitsSpinner = view.findViewById(R.id.timeUnitSpinner);
-        ArrayAdapter<CharSequence> adapterTimeUnits = ArrayAdapter.createFromResource(getActivity(),
-                R.array.time_units_selection, android.R.layout.simple_spinner_item);
-        adapterTimeUnits.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        timeUnitsSpinner.setAdapter(adapterTimeUnits);
+        Activity activity = getActivity();
+        if (activity != null) {
+            ArrayAdapter<CharSequence> adapterTimeUnits = ArrayAdapter.createFromResource(activity,
+                    R.array.time_units_selection, android.R.layout.simple_spinner_item);
+            adapterTimeUnits.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            timeUnitsSpinner.setAdapter(adapterTimeUnits);
+        }
 
         timeUnitsSpinner.setOnItemSelectedListener(this);
 
@@ -73,11 +79,11 @@ public class CountdownTimer extends Tool implements AdapterView.OnItemSelectedLi
                 countDownTimer = new CountDownTimer(time*timeUnitMultiplier* 1000, timeUnitMultiplier*1000) {
 
                     public void onTick(long millisUntilFinished) {
-                        countdown.setText("" + (1+ millisUntilFinished / 1000/ timeUnitMultiplier));
+                        countdown.setText(String.format(Locale.ENGLISH, "%d", 1+ millisUntilFinished / 1000/ timeUnitMultiplier));
                     }
 
                     public void onFinish() {
-                        countdown.setText("Done!");
+                        countdown.setText(R.string.timer_value_default);
                     }
                 }.start();
             }

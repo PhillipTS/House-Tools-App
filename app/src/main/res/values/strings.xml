@@ -41,7 +41,19 @@
     <string name="tally_button_add">Add</string>
 
 
-    <string name="change_tools_button">Change Tools</string>
+    <string name="edit_tools_title">Edit Tools</string>
+
+    <string name="default_tool_title">Tool</string>
+
+    <string name="default_tool_desc">Tool Description</string>
+
+    <string name="remove_tool_button">Remove</string>
+
+    <string name="add_tool_title">Add Tool</string>
+
+    <string name="add_tool_desc">Add a new tool into this spot</string>
+
+    <string name="add_tool_button">Add</string>
 
     <string-array name="time_units_selection">
         <item>Seconds</item>

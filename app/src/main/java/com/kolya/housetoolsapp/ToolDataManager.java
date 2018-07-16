@@ -10,10 +10,12 @@ import java.util.Map;
 
 public class ToolDataManager {
 
+    private static final String FILE_KEY = "HouseToolsApp.Tools";
+
     private SharedPreferences sharedPreferences;
 
-    public ToolDataManager(@NonNull Activity activity) {
-        sharedPreferences = activity.getPreferences(Context.MODE_PRIVATE);
+    ToolDataManager(@NonNull Activity activity) {
+        sharedPreferences = activity.getSharedPreferences(FILE_KEY, Context.MODE_PRIVATE);
     }
 
     public ArrayList<String> getTools() {

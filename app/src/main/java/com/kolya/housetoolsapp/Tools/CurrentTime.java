@@ -1,5 +1,6 @@
 package com.kolya.housetoolsapp.Tools;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,12 +17,15 @@ import com.kolya.housetoolsapp.R;
  */
 public class CurrentTime extends Tool {
 
+
+
     TextView display;
 
     Clock clock;
 
     public CurrentTime() {
-        // Required empty public constructor
+        title = "Current Time";
+        description = "Displays the current time, updates and 24hr";
     }
 
     @Override
@@ -34,18 +38,20 @@ public class CurrentTime extends Tool {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_current_time, container, false);
 
-        display = (TextView) view.findViewById(R.id.timeView);
+        display = view.findViewById(R.id.timeView);
 
         clock = new Clock() {
             @Override
             public void onTick() {
                 super.startClock();
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        display.setText(clock.getTime());
-                    }
-                });
+                Activity activity = getActivity();
+                if (activity != null)
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            display.setText(clock.getTime());
+                        }
+                    });
             }
         };
 

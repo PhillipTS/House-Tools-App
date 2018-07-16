@@ -2,6 +2,7 @@ package com.kolya.housetoolsapp.Tools;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,10 @@ public class Tool extends Fragment {
     public static final String SIMPLE_COUNTER_TOOL = "SIMPLE_COUNTER_TOOL";
 
     public static final String SIMPLE_TALLY_TOOL = "SIMPLE_TALLY_TOOL";
+
+    protected String title = "Tool";
+
+    protected String description = "A base tool that all other tools are made from";
 
     public Tool() {}
 
@@ -59,8 +64,20 @@ public class Tool extends Fragment {
         return inflater.inflate(R.layout.fragment_tool, container, false);
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
-        return "tool";
+        String output = "\nTool";
+        output += "\nTitle: " + title;
+        output += "\nDescription: " + description;
+
+        return output;
     }
 }
