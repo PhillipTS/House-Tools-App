@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">House Tools App</string>
 
+
     <string name="hello_test_fragment">Test Fragment</string>
+
 
     <string name="current_time_title">Current Time</string>
 
@@ -13,6 +15,7 @@
 
     <string name="timer_value_default">Done</string>
 
+
     <string name="clock_title">Stopwatch</string>
 
     <string name="clock_toggle_start">Start Clock</string>
@@ -20,6 +23,7 @@
     <string name="clock_toggle_stop">Stop Clock</string>
 
     <string name="clock_reset">Reset Clock</string>
+
 
     <string name="simple_counter_subtract_string">Sub</string>
 
@@ -29,11 +33,15 @@
 
     <string name="simple_counter_output">0</string>
 
+
     <string name="tally_title">Tally</string>
 
     <string name="tally_output_default">0</string>
 
     <string name="tally_button_add">Add</string>
+
+
+    <string name="change_tools_button">Change Tools</string>
 
     <string-array name="time_units_selection">
         <item>Seconds</item>

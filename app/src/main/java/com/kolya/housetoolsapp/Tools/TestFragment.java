@@ -17,9 +17,7 @@ import com.kolya.housetoolsapp.R;
  */
 public class TestFragment extends Tool {
 
-    public TestFragment() {
-        // Required empty public constructor
-    }
+    public TestFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
