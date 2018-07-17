@@ -62,6 +62,8 @@ public class EditToolsActivity extends AppCompatActivity {
         catch (IndexOutOfBoundsException NoTool) {
             if (!addToolSet)
                 setAddTool(toolTitleView, toolDescView, toolButton);
+            else
+                resetTool(toolTitleView, toolDescView, toolButton);
         }
     }
 
@@ -71,6 +73,7 @@ public class EditToolsActivity extends AppCompatActivity {
 
         toolTitleView.setText(tool.getTitle());
         toolDescView.setText(tool.getDescription());
+        removeToolButton.setText(R.string.remove_tool_button);
         removeToolButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,6 +102,13 @@ public class EditToolsActivity extends AppCompatActivity {
             }
         });
         addToolSet = true;
+    }
+
+    private void resetTool(TextView toolTitleView, TextView toolDescView, Button toolButton) {
+        toolTitleView.setText(R.string.default_tool_title);
+        toolDescView.setText(R.string.default_tool_desc);
+        toolButton.setText("");
+        toolButton.setOnClickListener(null);
     }
 
     @Override

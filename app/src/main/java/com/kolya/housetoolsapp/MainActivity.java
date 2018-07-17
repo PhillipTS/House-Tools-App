@@ -32,6 +32,22 @@ public class MainActivity extends AppCompatActivity {
         // Create Tool Manager
         toolDataManager = new ToolDataManager(this);
 
+        updateTools();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        //updateTools();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateTools();
+    }
+
+    private void updateTools() {
         // Create Tools
         ArrayList<String> toolIDs = toolDataManager.getTools();
 
@@ -72,9 +88,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.add_current_time:
                 toolDataManager.addTool(Tool.CURRENT_TIME_TOOL);
+                updateTools();
                 return true;
             case R.id.add_countdown_timer:
                 toolDataManager.addTool(Tool.COUNTDOWN_TIMER_TOOL);
+                updateTools();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
