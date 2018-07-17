@@ -29,6 +29,7 @@ public class Tool extends Fragment {
 
     public static final String SIMPLE_TALLY_TOOL = "SIMPLE_TALLY_TOOL";
 
+
     protected String id = null;
 
     protected String title = "Tool";

@@ -2,6 +2,7 @@ package com.kolya.housetoolsapp;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +16,7 @@ import com.kolya.housetoolsapp.Tools.Tool;
 
 import java.util.ArrayList;
 
-public class EditToolsActivity extends AppCompatActivity {
+public class EditToolsActivity extends AppCompatActivity implements NewToolDialog.NewToolDialogListener {
 
     private ToolDataManager toolDataManager;
 
@@ -108,6 +109,11 @@ public class EditToolsActivity extends AppCompatActivity {
         toolDescView.setText(R.string.default_tool_desc);
         toolButton.setText("");
         toolButton.setOnClickListener(null);
+    }
+
+    @Override
+    public void onNewToolSelection(DialogFragment dialog) {
+        updateTools();
     }
 
     @Override
