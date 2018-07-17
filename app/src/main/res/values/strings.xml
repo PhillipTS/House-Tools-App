@@ -55,6 +55,9 @@
 
     <string name="add_tool_button">Add</string>
 
+
+    <string name="new_tool_title">New Tool</string>
+
     <string-array name="time_units_selection">
         <item>Seconds</item>
         <item>Minutes</item>

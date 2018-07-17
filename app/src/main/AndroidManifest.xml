@@ -21,7 +21,7 @@
             android:parentActivityName=".EditToolsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".EditToolsActivity" />
+                android:value=".MainActivity" />
         </activity>
     </application>
 

@@ -17,8 +17,6 @@ import android.widget.TextView;
 
 import com.kolya.housetoolsapp.R;
 
-import org.w3c.dom.Text;
-
 import java.util.Locale;
 
 /**
@@ -31,6 +29,7 @@ public class CountdownTimer extends Tool implements AdapterView.OnItemSelectedLi
     private CountDownTimer countDownTimer = null;
 
     public CountdownTimer() {
+        id = Tool.COUNTDOWN_TIMER_TOOL;
         title = "Countdown Timer";
         description = "A timer that counts down to 0 from a set value";
     }

@@ -25,6 +25,7 @@ public class StopWatch extends Tool {
     private Button clockToggleButton;
 
     public StopWatch() {
+        id = Tool.STOPWATCH_TOOL;
         title = "StopWatch";
         description = "A stopwatch that can count up, stop/start, and reset";
     }

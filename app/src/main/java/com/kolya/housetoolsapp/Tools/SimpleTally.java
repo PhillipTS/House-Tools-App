@@ -22,6 +22,7 @@ public class SimpleTally extends Tool {
     float tallyValue = 0;
 
     public SimpleTally() {
+        id = Tool.SIMPLE_TALLY_TOOL;
         title = "Simple Tally";
         description = "A simple tally that can count up";
     }

@@ -21,6 +21,7 @@ public class SimpleCounter extends Tool {
     private int counterValue = 0;
 
     public SimpleCounter() {
+        id = Tool.SIMPLE_COUNTER_TOOL;
         title = "Simple Counter";
         description = "A simple counter that counts up or down";
     }

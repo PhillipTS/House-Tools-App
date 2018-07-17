@@ -24,6 +24,7 @@ public class CurrentTime extends Tool {
     Clock clock;
 
     public CurrentTime() {
+        id = Tool.CURRENT_TIME_TOOL;
         title = "Current Time";
         description = "Displays the current time, updates and 24hr";
     }
