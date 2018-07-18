@@ -1,8 +1,8 @@
 package com.kolya.housetoolsapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -26,12 +26,6 @@ public class MainActivity extends AppCompatActivity {
         toolDataManager = new ToolDataManager(this);
 
         updateTools();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        //updateTools();
     }
 
     @Override
@@ -78,14 +72,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.change_tools:
                 Intent intent = new Intent(this, EditToolsActivity.class);
                 startActivity(intent);
-                return true;
-            case R.id.add_current_time:
-                toolDataManager.addTool(Tool.CURRENT_TIME_TOOL);
-                updateTools();
-                return true;
-            case R.id.add_countdown_timer:
-                toolDataManager.addTool(Tool.COUNTDOWN_TIMER_TOOL);
-                updateTools();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

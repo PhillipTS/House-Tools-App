@@ -27,9 +27,12 @@ public class NewToolDialog extends DialogFragment {
 
         final ArrayList<Tool> tools = Tool.makeAllTools();
 
+        ArrayList<String> setToolsIDs = toolDataManager.getTools();
+
         ArrayList<String> toolNames = new ArrayList<>(10);
         for (Tool tool : tools) {
-            toolNames.add(tool.getTitle());
+            if (!setToolsIDs.contains(tool.getID()))
+                toolNames.add(tool.getTitle());
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);

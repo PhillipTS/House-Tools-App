@@ -6,10 +6,4 @@
         android:icon="@drawable/ic_edit_white_24dp"
         android:title="@string/edit_tools_title"
         app:showAsAction="always"/>
-    <item
-        android:id="@+id/add_current_time"
-        android:title="Add Time"/>
-    <item
-        android:id="@+id/add_countdown_timer"
-        android:title="Add Timer"/>
 </menu>
