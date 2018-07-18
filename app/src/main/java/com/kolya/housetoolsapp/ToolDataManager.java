@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 
+import com.kolya.housetoolsapp.Tools.Tool;
+
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -18,15 +20,25 @@ public class ToolDataManager {
         sharedPreferences = activity.getSharedPreferences(FILE_KEY, Context.MODE_PRIVATE);
     }
 
-    public ArrayList<String> getTools() {
+    public ArrayList<Tool> getTools() {
+        ArrayList<String> toolIDs = getToolIDs();
+
+        ArrayList<Tool> tools = new ArrayList<>(toolIDs.size());
+        for (String toolID : toolIDs)
+            tools.add(Tool.makeTool(toolID));
+
+        return tools;
+    }
+
+    public ArrayList<String> getToolIDs() {
         Map<String, ?> toolsMap = sharedPreferences.getAll();
-        ArrayList<String> tools = new ArrayList<>(5);
+        ArrayList<String> toolIDs = new ArrayList<>(5);
 
         for (String key : toolsMap.keySet())
             if ((Boolean) toolsMap.get(key))
-                tools.add(key);
+                toolIDs.add(key);
 
-        return tools;
+        return toolIDs;
     }
 
     public void removeTool(String toolID) {

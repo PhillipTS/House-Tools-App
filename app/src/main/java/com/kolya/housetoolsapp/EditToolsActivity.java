@@ -20,7 +20,7 @@ public class EditToolsActivity extends AppCompatActivity implements NewToolDialo
 
     private ToolDataManager toolDataManager;
 
-    private ArrayList<String> toolIDs;
+    private ArrayList<Tool> tools;
 
     private Boolean addToolSet = false;
 
@@ -41,23 +41,24 @@ public class EditToolsActivity extends AppCompatActivity implements NewToolDialo
     }
 
     private void updateTools() {
-        toolIDs = toolDataManager.getTools();
+        tools = toolDataManager.getTools();
         addToolSet = false;
 
+        // TODO: Change to dynamic number of tools
         updateTool(R.id.tool_title1, R.id.tool_description1, R.id.tool_button1, 0);
         updateTool(R.id.tool_title2, R.id.tool_description2, R.id.tool_button2, 1);
         updateTool(R.id.tool_title3, R.id.tool_description3, R.id.tool_button3, 2);
         updateTool(R.id.tool_title4, R.id.tool_description4, R.id.tool_button4, 3);
     }
 
-    private void updateTool(int titleID, int descID, int buttonID, int idIndex) {
+    private void updateTool(int titleID, int descID, int buttonID, int index) {
 
         TextView toolTitleView = findViewById(titleID);
         TextView toolDescView = findViewById(descID);
         Button toolButton = findViewById(buttonID);
 
         try {
-            setToolData(toolTitleView, toolDescView, toolButton, toolIDs.get(idIndex));
+            setToolData(toolTitleView, toolDescView, toolButton, tools.get(index));
         }
         catch (IndexOutOfBoundsException NoTool) {
             if (!addToolSet)
@@ -67,9 +68,9 @@ public class EditToolsActivity extends AppCompatActivity implements NewToolDialo
         }
     }
 
-    private void setToolData(TextView toolTitleView, TextView toolDescView, Button removeToolButton, String id) {
-        final String toolID = id;
-        final Tool tool = Tool.makeTool(toolID);
+    private void setToolData(TextView toolTitleView, TextView toolDescView, Button removeToolButton, Tool initTool) {
+
+        final Tool tool = initTool;
 
         toolTitleView.setText(tool.getTitle());
         toolDescView.setText(tool.getDescription());
@@ -77,13 +78,13 @@ public class EditToolsActivity extends AppCompatActivity implements NewToolDialo
         removeToolButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toolDataManager.removeTool(toolID);
+                toolDataManager.removeTool(tool.getID());
                 updateTools();
-                Snackbar.make(view, tool.getTitle() + " Removed", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, tool.getTitle() + " Removed ", Snackbar.LENGTH_LONG)
                         .setAction("Undo", new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                toolDataManager.addTool(toolID);
+                                toolDataManager.addTool(tool.getID());
                                 updateTools();
                             }
                         }).show();

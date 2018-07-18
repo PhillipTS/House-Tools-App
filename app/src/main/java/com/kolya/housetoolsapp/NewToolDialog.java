@@ -27,13 +27,9 @@ public class NewToolDialog extends DialogFragment {
 
         final ArrayList<Tool> tools = Tool.makeAllTools();
 
-        ArrayList<String> setToolsIDs = toolDataManager.getTools();
-
-        ArrayList<String> toolNames = new ArrayList<>(10);
-        for (Tool tool : tools) {
-            if (!setToolsIDs.contains(tool.getID()))
-                toolNames.add(tool.getTitle());
-        }
+        final ArrayList<String> toolNames = new ArrayList<>(tools.size());
+        for (Tool tool : tools)
+            toolNames.add(tool.getTitle());
 
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setTitle(R.string.new_tool_title)
@@ -63,6 +59,6 @@ public class NewToolDialog extends DialogFragment {
     }
 
     public interface NewToolDialogListener {
-        public void onNewToolSelection(DialogFragment dialog);
+        void onNewToolSelection(DialogFragment dialog);
     }
 }

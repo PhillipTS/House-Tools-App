@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateTools() {
         // Create Tools
-        ArrayList<String> toolIDs = toolDataManager.getTools();
+        ArrayList<String> toolIDs = toolDataManager.getToolIDs();
 
         ArrayList<Tool> tools = new ArrayList<>(4);
 
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             tools.add(tool);
         }
 
+        // TODO: Use Dynamic amount of tools
         setTool(tools.get(0), R.id.tool1, tools.get(0).toString());
         setTool(tools.get(1), R.id.tool2, tools.get(1).toString());
         setTool(tools.get(2), R.id.tool3, tools.get(2).toString());
