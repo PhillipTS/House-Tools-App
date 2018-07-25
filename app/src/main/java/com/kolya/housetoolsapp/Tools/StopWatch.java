@@ -63,6 +63,7 @@ public class StopWatch extends Tool {
                 }
                 else {
                     clock.startClock();
+                    stopwatch.setText(String.format(Locale.ENGLISH, "%d", clock.getCount()));
                     clockToggleButton.setText(R.string.clock_toggle_stop);
                 }
             }
@@ -72,6 +73,7 @@ public class StopWatch extends Tool {
             @Override
             public void onClick(View view) {
                 clock.reset();
+                stopwatch.setText(String.format(Locale.ENGLISH, "%d", 0));
             }
         });
 

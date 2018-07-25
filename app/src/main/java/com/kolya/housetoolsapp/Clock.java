@@ -1,6 +1,7 @@
 package com.kolya.housetoolsapp;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 public class Clock {
 
@@ -10,7 +11,7 @@ public class Clock {
 
     private Thread thread = null;
 
-    public Clock() {
+    protected Clock() {
         count = 0;
         running = false;
     }
@@ -20,29 +21,31 @@ public class Clock {
     public void startClock() {
         running = true;
 
-        if (thread != null) { return; }
+        if (thread == null) {
+            thread = new Thread() {
 
-        thread = new Thread() {
-
-            @Override
-            public void run() {
-                try {
-                    while (!isInterrupted()) {
-                        Thread.sleep(1000);
-
-                        count++;
-                        onTick();
-                    }
-                } catch (InterruptedException e) {}
-            }
-        };
-
-        thread.start();
+                @Override
+                public void run() {
+                    try {
+                        while (!isInterrupted()) {
+                            Thread.sleep(1000);
+                            count++;
+                            onTick();
+                        }
+                    } catch (InterruptedException e) {}
+                }
+            };
+            thread.start();
+        }
     }
 
     public void stop() {
         running = false;
-        thread.interrupt();
+        if (thread != null) {
+            Thread temp = thread;
+            thread = null;
+            temp.interrupt();
+        }
     }
 
     public void reset() {
@@ -60,6 +63,6 @@ public class Clock {
         int minutes = calender.get(Calendar.MINUTE);
         int seconds = calender.get(Calendar.SECOND);
 
-        return String.format("%02d  %02d  %02d", hours, minutes, seconds);
+        return String.format(Locale.ENGLISH, "%02d  %02d  %02d", hours, minutes, seconds);
     }
 }
