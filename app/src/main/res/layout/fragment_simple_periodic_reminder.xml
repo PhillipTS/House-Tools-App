@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tools.SimplePeriodicReminder">
+
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/simplePeriodicReminderTitle"
+            style="@style/toolTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/simple_periodic_reminder_title"
+            app:layout_constraintBottom_toTopOf="@+id/simplePeriodicReminderInput"
+            app:layout_constraintStart_toStartOf="@+id/simplePeriodicReminderInput"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/simplePeriodicReminderInput"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/simplePeriodicReminderTitle" />
+
+        <CheckBox
+            android:id="@+id/simplePeriodicReminderButtonCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/simple_periodic_reminder_button_check"
+            app:layout_constraintBottom_toBottomOf="@+id/simplePeriodicReminderInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/simplePeriodicReminderInput" />
+
+        <Spinner
+            android:id="@+id/simplePeriodicReminderSpinner"
+            style="@style/SpinnerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/simplePeriodicReminderTitle"
+            app:layout_constraintEnd_toEndOf="@+id/simplePeriodicReminderButtonCheck"
+            app:layout_constraintTop_toTopOf="@+id/simplePeriodicReminderTitle" />
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

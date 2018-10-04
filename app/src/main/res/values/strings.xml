@@ -36,6 +36,9 @@
 
     <string name="simple_counter_output">0</string>
 
+    <string name="simple_periodic_reminder_title">Reminder</string>
+
+    <string name="simple_periodic_reminder_button_check">Check</string>
 
     <string name="tally_title">Tally</string>
 
