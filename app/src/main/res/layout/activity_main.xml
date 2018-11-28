@@ -10,9 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent" >
 
             <fragment
                 android:id="@+id/tool1"
@@ -47,6 +47,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_below="@id/tool4" />
+
+            <fragment
+                android:id="@+id/tool6"
+                android:name="com.kolya.housetoolsapp.Tools.Tool"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/tool5" />
+
+            <fragment
+                android:id="@+id/tool7"
+                android:name="com.kolya.housetoolsapp.Tools.Tool"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/tool6" />
+
+            <fragment
+                android:id="@+id/tool8"
+                android:name="com.kolya.housetoolsapp.Tools.Tool"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/tool7" />
 
         </RelativeLayout>
 

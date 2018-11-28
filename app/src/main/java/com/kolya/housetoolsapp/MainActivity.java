@@ -2,10 +2,14 @@ package com.kolya.housetoolsapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
 import com.kolya.housetoolsapp.Tools.Tool;
 
@@ -38,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         // Create Tools
         ArrayList<String> toolIDs = toolDataManager.getToolIDs();
 
-        ArrayList<Tool> tools = new ArrayList<>(4);
+        ArrayList<Tool> tools = new ArrayList<>(toolIDs.size());
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 8 || i < toolIDs.size(); i++) {
             Tool tool;
             try {
                 String toolID = toolIDs.get(i);
@@ -57,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
         setTool(tools.get(1), R.id.tool2, tools.get(1).toString());
         setTool(tools.get(2), R.id.tool3, tools.get(2).toString());
         setTool(tools.get(3), R.id.tool4, tools.get(3).toString());
+        setTool(tools.get(4), R.id.tool5, tools.get(4).toString());
+        setTool(tools.get(5), R.id.tool6, tools.get(5).toString());
+        setTool(tools.get(6), R.id.tool7, tools.get(6).toString());
+        setTool(tools.get(7), R.id.tool8, tools.get(7).toString());
     }
 
     @Override

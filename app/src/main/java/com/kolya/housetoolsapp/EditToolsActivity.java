@@ -49,6 +49,10 @@ public class EditToolsActivity extends AppCompatActivity implements NewToolDialo
         updateTool(R.id.tool_title2, R.id.tool_description2, R.id.tool_button2, 1);
         updateTool(R.id.tool_title3, R.id.tool_description3, R.id.tool_button3, 2);
         updateTool(R.id.tool_title4, R.id.tool_description4, R.id.tool_button4, 3);
+        updateTool(R.id.tool_title5, R.id.tool_description5, R.id.tool_button5, 4);
+        updateTool(R.id.tool_title6, R.id.tool_description6, R.id.tool_button6, 5);
+        updateTool(R.id.tool_title7, R.id.tool_description7, R.id.tool_button7, 6);
+        updateTool(R.id.tool_title8, R.id.tool_description8, R.id.tool_button8, 7);
     }
 
     private void updateTool(int titleID, int descID, int buttonID, int index) {
