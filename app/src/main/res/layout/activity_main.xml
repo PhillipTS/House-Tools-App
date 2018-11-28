@@ -6,44 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
-        android:id="@+id/tool1"
-        android:name="com.kolya.housetoolsapp.Tools.Tool"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/tool2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <fragment
-        android:id="@+id/tool2"
-        android:name="com.kolya.housetoolsapp.Tools.Tool"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/tool3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tool1" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <fragment
-        android:id="@+id/tool3"
-        android:name="com.kolya.housetoolsapp.Tools.Tool"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/tool4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tool2" />
+            <fragment
+                android:id="@+id/tool1"
+                android:name="com.kolya.housetoolsapp.Tools.Tool"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
 
-    <fragment
-        android:id="@+id/tool4"
-        android:name="com.kolya.housetoolsapp.Tools.Tool"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tool3" />
+            <fragment
+                android:id="@+id/tool2"
+                android:name="com.kolya.housetoolsapp.Tools.Tool"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/tool1" />
+
+            <fragment
+                android:id="@+id/tool3"
+                android:name="com.kolya.housetoolsapp.Tools.Tool"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/tool2" />
+
+            <fragment
+                android:id="@+id/tool4"
+                android:name="com.kolya.housetoolsapp.Tools.Tool"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/tool3" />
+
+            <fragment
+                android:id="@+id/tool5"
+                android:name="com.kolya.housetoolsapp.Tools.Tool"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/tool4" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
